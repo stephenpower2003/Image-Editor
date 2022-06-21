@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.imageeditor.Controller">
+  <tabs>
+    <Tab text="Main Menu">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="900.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                          <MenuItem fx:id="menuOpen" mnemonicParsing="false" onAction="#selectImage" text="Open Image" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="Exit">
+                        <items>
+                          <MenuItem fx:id="menuExit" mnemonicParsing="false" onAction="#exitMenu" text="Confirm" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <ImageView fx:id="mainIV" fitHeight="500.0" fitWidth="500.0" layoutX="386.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label fx:id="fileName" layoutX="24.0" layoutY="118.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="File Name:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font></Label>
+                  <Label fx:id="imageSize" layoutX="24.0" layoutY="163.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Image Size:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font></Label>
+                  <Slider fx:id="sliderHue" blockIncrement="30.0" layoutX="230.0" layoutY="345.0" max="360.0" min="-360.0" prefHeight="30.0" prefWidth="150.0" />
+                  <Label layoutX="24.0" layoutY="342.0" prefHeight="36.0" prefWidth="179.0" style="-fx-text-fill: white;" text="Increase/Decrease Hue:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="24.0" layoutY="401.0" prefHeight="36.0" prefWidth="217.0" style="-fx-text-fill: white;" text="Increase/Decrease Saturation:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="24.0" layoutY="460.0" prefHeight="36.0" prefWidth="191.0" style="-fx-text-fill: white;" text="Increase/Decrease Brightness:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="14.0" />
+                     </font></Label>
+                  <Label layoutX="24.0" layoutY="248.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Image Controls">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                  </Label>
+                  <Slider fx:id="sliderSaturation" blockIncrement="0.2" layoutX="230.0" layoutY="403.0" max="1.0" min="-1.0" prefHeight="31.0" prefWidth="150.0" />
+                  <Slider fx:id="sliderBrightness" blockIncrement="0.2" layoutX="230.0" layoutY="463.0" max="1.0" min="-1.0" prefHeight="30.0" prefWidth="150.0" />
+                  <Label layoutX="24.0" layoutY="45.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Image Details">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="resetImage" layoutX="24.0" layoutY="515.0" mnemonicParsing="false" onAction="#resetImage" style="-fx-background-color: purple;" text="Reset Image" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Historic" size="14.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Grayscale Image">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="greyIV" fitHeight="500.0" fitWidth="500.0" layoutX="376.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="23.0" layoutY="35.0" prefHeight="52.0" prefWidth="353.0" style="-fx-text-fill: white;" text="Grey Image">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="greyH" layoutX="23.0" layoutY="167.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Hue = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="greyB" layoutX="23.0" layoutY="203.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Brightness = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="greyS" layoutX="23.0" layoutY="239.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Saturation = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileName112" layoutX="23.0" layoutY="112.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Average Pixel Values:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="22.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab text="Red Colour Channel">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="redIV" fitHeight="500.0" fitWidth="500.0" layoutX="377.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="23.0" layoutY="35.0" prefHeight="52.0" prefWidth="353.0" style="-fx-text-fill: white;" text="Red Image">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileName1121" layoutX="23.0" layoutY="112.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Average Pixel Values:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="redH" layoutX="23.0" layoutY="167.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Hue = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="redB" layoutX="23.0" layoutY="203.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Brightness = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="redS" layoutX="23.0" layoutY="239.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Saturation = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Green Colour Channel">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="greenIV" fitHeight="500.0" fitWidth="500.0" layoutX="376.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="23.0" layoutY="35.0" prefHeight="52.0" prefWidth="353.0" style="-fx-text-fill: white;" text="Green Image">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileName1122" layoutX="23.0" layoutY="112.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Average Pixel Values:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="greenH" layoutX="23.0" layoutY="167.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Hue = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="greenB" layoutX="23.0" layoutY="203.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Brightness = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="greenS" layoutX="23.0" layoutY="239.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Saturation = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Blue Colour Channel">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: grey;">
+               <children>
+                  <ImageView fx:id="blueIV" fitHeight="500.0" fitWidth="500.0" layoutX="376.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="23.0" layoutY="35.0" prefHeight="52.0" prefWidth="353.0" style="-fx-text-fill: white;" text="Blue Image">
+                     <font>
+                        <Font name="Segoe UI" size="42.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileName11221" layoutX="23.0" layoutY="112.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Average Pixel Values:">
+                     <font>
+                        <Font name="Segoe UI Historic" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="blueH" layoutX="23.0" layoutY="167.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Hue = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="blueB" layoutX="23.0" layoutY="203.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Brightness = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="blueS" layoutX="23.0" layoutY="239.0" prefHeight="36.0" prefWidth="300.0" style="-fx-text-fill: white;" text="Saturation = ">
+                     <font>
+                        <Font name="Segoe UI Historic" size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
